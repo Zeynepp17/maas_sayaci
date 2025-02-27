@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 from datetime import datetime
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 CORS(app)  # React ile bağlantıyı aç
@@ -35,5 +36,6 @@ def maas_gunu_sayaci():
     })
 
 if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=10000, debug=True)
 
