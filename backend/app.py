@@ -1,6 +1,6 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify # type: ignore
 from datetime import datetime
-from flask_cors import CORS
+from flask_cors import CORS # type: ignore
 import os
 
 app = Flask(__name__)
@@ -37,5 +37,6 @@ def maas_gunu_sayaci():
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
+    print(f"Running on PORT: {port}")
     app.run(host="0.0.0.0", port=port, debug=True)
 
